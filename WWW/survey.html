@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Venezuela Decoded</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="shortcut icon" href="flat-ui/images/favicon.ico">
+        <link rel="stylesheet" href="flat-ui/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="flat-ui/css/flat-ui.css">
+        <!-- Using only with Flat-UI (free)-->
+        <link rel="stylesheet" href="common-files/css/icon-font.css">
+        <!-- end -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="page-wrapper">
+            <!-- header-10 -->
+            <header class="header-10">
+                <div class="container">
+                    <div class="navbar col-sm-12" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle"></button>
+                            <a class="brand" href="index.html">VENEZUELA DECODED</a>
+                        </div>
+                        <div class="collapse navbar-collapse pull-right">
+                            <ul class="nav pull-left">
+                                <li><a href="index.html">timeline</a></li>
+                                <li><a href="index.html#twitter">@twitter</a></li>
+                                <li><a href="who-is-who.html">Who is who</a></li>
+                                <li><a href="about.html">about</a></li>
+                                <li class="active"><a id="survey-link" href="survey.html">feedback</a></li>
+                                <li class="dropdown">
+                                  <a data-toggle="dropdown" href="#">English <b class="caret"></b></a>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <li>
+                                        <a href="es/survey.html">Spanish</a>
+                                    </li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+                <iframe id="survey-form" src="https://docs.google.com/forms/d/1F-tQqT0pD8Z_hp-v2BhbFop3eEkDLQ1cITxGJJiGGO8/viewform?embedded=true" width="100%" height="2682" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+            </div>
+
+            <!-- footer-3 
+            <footer class="footer-3">
+                <div class="container">
+                    <div class="row v-center">
+                        <div class="col-sm-2">
+                            <a class="brand" href="index.html">VENEZUELA DECODED</a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="additional-links">
+                                Be sure to take a look to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h6>New York, NY</h6>
+                            <div class="address">
+                                62 West 55th Street, Suite 302<br>New York, NY, 10230
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer> -->
+        </div>
+
+        
+        <footer id="footer">
+            <div class="container">
+                <div class="col-sm-4">
+                    <a class="brand" href="index.html">VENEZUELA DECODED</a>
+                </div>
+                <div class="col-sm-4">
+                    <strong>contact</strong> <br>
+                    <a href="mailto:venezueladecoded@gmail.com">venezueladecoded@gmail.com</a>
+                </div>
+                <div class="col-sm-4">
+                    Follow us on <a href="#"><img src="img/tw.png" alt=""></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="common-files/js/jquery-1.10.2.min.js"></script>
+        <script src="flat-ui/js/bootstrap.min.js"></script>
+        <script src="common-files/js/modernizr.custom.js"></script>
+        <script src="common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+        <script src="common-files/js/jquery.parallax.min.js"></script>
+        <script src="common-files/js/startup-kit.js"></script>
+        <script type="text/javascript" src="common-files/js/jquery.jcarousel.min.js"></script>
+        <!-- <script src="js/jquery.backgroundvideo.min.js"></script> -->
+        <!-- <script src="js/script.js"></script> -->
+        <script type="text/javascript">
+            //$(document).ready(function(){
+            //    $("#survey").hide();
+            //});
+            $(function() {
+            $('a[href*=#]:not([href=#])').click(function() {
+                //$(this.hash).show();
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+            });
+            var carousel = $('.jcarousel');
+
+            carousel.swipe({
+                swipeLeft: function(event, direction, distance, duration, fingerCount) {   
+                    carousel.jcarousel('scroll', '+=1');
+                },
+                swipeRight: function(event, direction, distance, duration, fingerCount) {
+                    carousel.jcarousel('scroll', '-=1');
+                }
+            });
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-48944600-1', 'venezueladecoded.com');
+            ga('send', 'pageview');
+        </script>
+        <!-- <script src="https://www.surveymonkey.com/jsPop.aspx?sm=a_2bKPI0xGjndLfRomFWUS2w_3d_3d"> </script> -->
+    </body>
+</html>

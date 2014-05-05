@@ -1,0 +1,50 @@
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img src="/img/who/{{ iam.party }}/{{ iam.img_name }}" alt="">
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="info">
+                      <h3>{{ iam.first_name }}</h3>
+                      <h3>
+                        <strong>{{ iam.last_name }}</strong>
+                      </h3>
+                      <em>{{ iam.at_screen_name }}</em>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mt20">{{ iam.bio[lang] }}</p>
+                <ul class="list-unstyled activity">
+                  <li>
+                      Activity: {{ '%0.2f' % (latest.activity*60) }} <em>tweets / hour</em>
+                  </li>
+                  <li>
+                      Reach: {{ '%0.2f' % latest.reach }}<em> @mentions / minute</em>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6">
+
+                    <ul class="nav nav-tabs" id="myTab2">
+
+                            <li class="active"><a href="#tline" data-toggle="tab">timeline</a></li>
+                            <li><a href="#mentions" data-toggle="tab">mentions</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tline">
+                            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{ iam.screen_name }}" data-widget-id="459067492342575104" data-chrome="nofooter noborders noheader" height="350px" data-screen-name="{{ iam.screen_name }}">Tweets por {{ iam.at_screen_name }}</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                        <div class="tab-pane" id="mentions">
+                            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%40{{ iam.screen_name }}" data-widget-id="{{ iam.mentions_widget_id }}" data-chrome="nofooter noborders noheader" height="350px">Tweets sobre "{{ iam.at_screen_name }}"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
